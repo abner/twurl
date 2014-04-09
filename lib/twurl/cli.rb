@@ -318,7 +318,7 @@ Supported Commands: #{SUPPORTED_COMMANDS.sort.join(', ')}
 
       def read_timeout
         on('-y', '--read-timeout [read_timeout]', 'Http Read Timeout (default: Net::HTTP read_timeout)') do |read_timeout|
-          options.read_timeout = read_timeout
+          options.read_timeout = read_timeout.to_i
         end
       end
     end
