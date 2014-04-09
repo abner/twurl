@@ -87,6 +87,7 @@ Supported Commands: #{SUPPORTED_COMMANDS.sort.join(', ')}
             file
             filefield
             base64
+            read_timeout
           end
         end
 
@@ -312,6 +313,12 @@ Supported Commands: #{SUPPORTED_COMMANDS.sort.join(', ')}
       def base64 
         on('-b', '--base64', 'Encode the uploaded file as base64 (default: false)') do |base64|
           options.upload['base64'] = base64
+        end
+      end
+
+      def read_timeout
+        on('-rt', '--read-timeout [read_timeout]', 'Http Read Timeout (default: Net::HTTP read_timeout)') do |read_timeout|
+          options.read_timeout = read_timeout
         end
       end
     end

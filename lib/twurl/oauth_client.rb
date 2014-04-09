@@ -113,6 +113,7 @@ module Twurl
       end
 
       request.oauth!(consumer.http, consumer, access_token)
+      consumer.http.read_timeout = options.read_timeout if options.read_timeout
       consumer.http.request(request, &block)
     end
 
