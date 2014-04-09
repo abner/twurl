@@ -40,7 +40,7 @@ module Twurl
       end
 
       def load_new_client_from_options(options)
-        new(options.oauth_client_options.merge('password' => options.password))
+        new(options.oauth_client_options.merge('password' => options.password, 'token' => options.access_token, 'secret' => options.token_secret))
       end
 
       def load_default_client
